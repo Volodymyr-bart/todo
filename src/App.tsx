@@ -1,31 +1,35 @@
 import { useState } from "react";
-// import { useAppDispatch } from "./hooks";
-import store from "./store/index";
-import { addTodo } from "./store/todoSlice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./store/store";
+import { addTodo } from "./store/Todo/todoSlice";
 import NewTodoForm from "./components/NewTodoForm";
 import TodoList from "./components/TodoList";
 
 import "./App.css";
+import Main from "./App.styled";
 
 function App() {
   const [text, setText] = useState<string>("");
-  // const dispatch = useAppDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const handleAction = () => {
-    if (text.trim().length) {  
-      store.dispatch(addTodo(text));
+    if (text.trim().length) {
+      dispatch(addTodo(text));
       setText("");
     }
   };
 
   return (
     <div className="App">
-      <NewTodoForm
-        value={text}
-        updateText={setText}
-        handleAction={handleAction}
-      />
-      <TodoList />
+      <header>Todo</header>
+      <Main>
+        <NewTodoForm
+          value={text}
+          updateText={setText}
+          handleAction={handleAction}
+        />
+        <TodoList />
+      </Main>
     </div>
   );
 }
