@@ -6,14 +6,14 @@ import { BlockTasks, List } from "./TodoList.styled";
 
 const TodoList = () => {
   // const todos = useAppSelector((state) => state.todos.list);
-  const todos = useSelector(getAllTask);
+  // const todos = useSelector(getAllTask);
   const сurrentTask = useSelector(getCurrentTask);
   const completedTasks = useSelector(getCompletedTasks);
   const urgentTasks = useSelector(getUrgentTasks);
 
   return (
     <BlockTasks>
-      <div>
+      {/* <div>
         <h2>All Task</h2>
         <List>
           {todos?.length ? (
@@ -22,8 +22,8 @@ const TodoList = () => {
             <>No task</>
           )}
         </List>
-      </div>
-      {/* <div>
+      </div> */}
+      <div>
         <h2>Current Task</h2>
         <List>
           {сurrentTask?.length ? (
@@ -32,7 +32,7 @@ const TodoList = () => {
             <>No task</>
           )}
         </List>
-      </div> */}
+      </div>
       <div>
         <h2>Urgent tasks</h2>
         <List>

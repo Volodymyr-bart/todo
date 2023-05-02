@@ -6,6 +6,9 @@ const Item = styled.li`
   gap: 10px;
   align-items: center;
   justify-content: center;
+  background-color: pink;
+  padding: 5px;
+  border-radius: 20px;
 `;
 
 export default Item;
