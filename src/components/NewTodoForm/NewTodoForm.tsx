@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Button } from "@mui/material";
 import NewTodoFormStyled from "./NewTodoForm.styled";
 interface NewTodoFormProps {
   value: string;
@@ -19,7 +20,8 @@ const NewTodoForm: FC<NewTodoFormProps> = ({
             value={value}
             onChange={(e) => updateText(e.target.value)}
           />
-          <button onClick={handleAction}>Add todo</button>
+          <Button variant="contained" onClick={handleAction}>Add todo</Button>
+          
         </label>
       </NewTodoFormStyled>
     </div>

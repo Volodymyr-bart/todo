@@ -9,6 +9,8 @@ import {
 } from "../../store/Todo/todoSlice";
 import Item from "./TodoItem.styled";
 import { useDispatch } from "react-redux";
+import { Button } from "@mui/material";
+// import DeleteIcon from "@material-ui/icons/Delete";
 
 interface TodoItemProps {
   id: string;
@@ -41,7 +43,13 @@ const TodoItem: FC<TodoItemProps> = ({
       ) : (
         <span onClick={() => dispatch(toggleUrgentTodo(id))}>no urgent</span>
       )}
-      <span onClick={() => dispatch(removeTodo(id))}>&times;</span>
+      <Button
+        variant="outlined"
+        // startIcon={<DeleteIcon />}
+        onClick={() => dispatch(removeTodo(id))}>
+        Delete
+      </Button>
+      {/* <span onClick={() => dispatch(removeTodo(id))}>&times;</span> */}
     </Item>
   );
 };
