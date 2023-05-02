@@ -1,28 +1,20 @@
 import { useSelector } from "react-redux";
-// import { useAppSelector } from "../../hooks";
+
 import TodoItem from "../TodoItem/TodoItem";
-import { getAllTask, getCompletedTasks, getCurrentTask, getUrgentTasks } from "../../store/Todo/selectors";
+import {
+  getCompletedTasks,
+  getCurrentTask,
+  getUrgentTasks,
+} from "../../store/Todo/selectors";
 import { BlockTasks, List } from "./TodoList.styled";
 
 const TodoList = () => {
-  // const todos = useAppSelector((state) => state.todos.list);
-  // const todos = useSelector(getAllTask);
   const сurrentTask = useSelector(getCurrentTask);
   const completedTasks = useSelector(getCompletedTasks);
   const urgentTasks = useSelector(getUrgentTasks);
 
   return (
     <BlockTasks>
-      {/* <div>
-        <h2>All Task</h2>
-        <List>
-          {todos?.length ? (
-            todos.map((todo) => <TodoItem key={todo.id} {...todo} />)
-          ) : (
-            <>No task</>
-          )}
-        </List>
-      </div> */}
       <div>
         <h2>Current Task</h2>
         <List>

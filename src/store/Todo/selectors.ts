@@ -19,6 +19,6 @@ export const getCompletedTasks = (state: RootState) => {
 };
 export const getUrgentTasks = (state: RootState) => {
   if (state.todos.list.length) {
-    return state.todos.list.filter((todo) => todo.urgent);
+    return state.todos.list.filter((todo) => todo.urgent && !todo.completed);
   }
 };
