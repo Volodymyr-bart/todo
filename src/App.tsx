@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "./store/store";
 import { addTodo } from "./store/Todo/todoSlice";
-import NewTodoForm from "./components/NewTodoForm";
-import TodoList from "./components/TodoList";
+import NewTodoForm from "./components/NewTodoForm/NewTodoForm";
+import TodoList from "./components/TodoList/TodoList";
 
 import "./App.css";
 import Main from "./App.styled";
